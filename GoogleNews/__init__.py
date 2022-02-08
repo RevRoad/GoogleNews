@@ -100,12 +100,13 @@ class GoogleNews:
     timeout: int (optional) default 5 seconds
         Timeout for the request to be made before returning html even if the images are not loaded       
     '''
-    def __init__(self,lang="en",period="",start="",end="",encode="utf-8",region=None, wait_for_images=False, timeout=5):
+    def __init__(self,lang="en",period="",start="",end="",encode="utf-8",region=None, wait_for_images=False, timeout=5, headless=True):
         self.__texts = []
         self.__links = []
         self.__results = []
         self.__totalcount = 0
-        self.user_agent = 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:64.0) Gecko/20100101 Firefox/64.0'
+        self.user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36'
+        
         self.__lang = lang
         if region:
             self.accept_language= lang + '-' + region + ',' + lang + ';q=0.9'
@@ -120,7 +121,8 @@ class GoogleNews:
         self.__wait_for_images = wait_for_images
         self.__timeout = timeout
         options = Options()
-        options.headless = True
+        options.headless = headless
+        options.add_argument(f"user-agent={self.user_agent}")
         self.driver = webdriver.Chrome(ChromeDriverManager(log_level=0).install(), options=options)
     
     def __del__(self):
@@ -172,7 +174,6 @@ class GoogleNews:
     def send_request(self):
         self.driver.get(self.url.replace("search?","search?hl=en&gl=en&"))
         if self.__wait_for_images:
-            self.driver.fullscreen_window()
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #Scroll to the bottom to force images to load properly
             try:
                 WebDriverWait(self.driver, timeout=self.__timeout).until(page_ready())
