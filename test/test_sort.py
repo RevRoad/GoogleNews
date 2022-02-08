@@ -1,7 +1,7 @@
 
 ### MODULES
 
-from GoogleNews_WebDriver import GoogleNews
+from GoogleNews import GoogleNews
 
 ### METHODS
 

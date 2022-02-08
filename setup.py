@@ -4,17 +4,18 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="GoogleNews_WebDriver",
-    version="1.0.0",
-    author="Jacob Tye",
-    author_email="jacob.tye@revroad.com",
+    name="GoogleNews",
+    version="1.7.0",
+    author="Hurin Hu",
+    author_email="hurin@live.ca",
     description="Google News search for Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/RevRoad/GoogleNews",
+    url="https://github.com/Iceloof/GoogleNews",
     packages=setuptools.find_packages(),
     install_requires=[
         "beautifulsoup4",
+        "dateparser",
         "python-dateutil",
         "selenium",
         "webdriver-manager",

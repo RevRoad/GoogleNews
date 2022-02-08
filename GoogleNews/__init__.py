@@ -3,7 +3,7 @@
 import re
 from time import time
 import urllib.request
-import copy
+import dateparser, copy
 from bs4 import BeautifulSoup as Soup, ResultSet
 from dateutil.parser import parse
 from selenium import webdriver

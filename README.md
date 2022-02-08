@@ -1,6 +1,6 @@
-# GoogleNews_WebDriver
-This is a fork of GoogleNews[https://github.com/Iceloof/GoogleNews] with Headless Chrome support to get all pictures.
-<!-- [![Build Status](https://app.travis-ci.com/Iceloof/GoogleNews.svg)](https://app.travis-ci.com/github/Iceloof/GoogleNews)
+# GoogleNews
+
+[![Build Status](https://app.travis-ci.com/Iceloof/GoogleNews.svg)](https://app.travis-ci.com/github/Iceloof/GoogleNews)
 [![Coverage Status](https://coveralls.io/repos/github/Iceloof/GoogleNews/badge.svg)](https://coveralls.io/github/Iceloof/GoogleNews)
 [![PyPI](https://img.shields.io/pypi/v/GoogleNews)](https://pypi.org/project/GoogleNews/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/GoogleNews)](https://pypistats.org/packages/googlenews)
@@ -9,20 +9,20 @@ This is a fork of GoogleNews[https://github.com/Iceloof/GoogleNews] with Headles
 ![GitHub contributors](https://img.shields.io/github/contributors/Iceloof/GoogleNews)
 ![GitHub issues](https://img.shields.io/github/issues-raw/Iceloof/GoogleNews)
 ![GitHub Action](https://github.com/Iceloof/GoogleNews/workflows/GitHub%20Action/badge.svg)
-![GitHub](https://img.shields.io/github/license/Iceloof/GoogleNews) -->
+![GitHub](https://img.shields.io/github/license/Iceloof/GoogleNews)
 
 ## Install
 ```
-pip install GoogleNews_WebDriver
+pip install GoogleNews
 ```
 or
 ```
-pip install --upgrade GoogleNews_WebDriver
+pip install --upgrade GoogleNews
 ```
 ## Usage
 - Initializing
 ```
-from GoogleNews_WebDriver import GoogleNews
+from GoogleNews import GoogleNews
 googlenews = GoogleNews()
 ```
 - Check version
