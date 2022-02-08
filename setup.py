@@ -15,7 +15,6 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=[
         "beautifulsoup4",
-        "dateparser",
         "python-dateutil",
         "selenium",
         "webdriver-manager",
