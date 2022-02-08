@@ -119,6 +119,12 @@ class GoogleNews:
         self.__version = '1.6.0'
         self.__wait_for_images = wait_for_images
         self.__timeout = timeout
+        options = Options()
+        options.headless = True
+        self.driver = webdriver.Chrome(ChromeDriverManager(log_level=0).install(), options=options)
+    
+    def __del__(self):
+        self.driver.quit()
 
     def getVersion(self):
         return self.__version
@@ -164,21 +170,16 @@ class GoogleNews:
         self.get_page()
     
     def send_request(self):
-        options = Options()
-        options.headless = True
-        driver = webdriver.Chrome(ChromeDriverManager(log_level=0).install(), options=options)
-        driver.get(self.url.replace("search?","search?hl=en&gl=en&"))
+        self.driver.get(self.url.replace("search?","search?hl=en&gl=en&"))
         if self.__wait_for_images:
-            driver.fullscreen_window()
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #Scroll to the bottom to force images to load properly
+            self.driver.fullscreen_window()
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #Scroll to the bottom to force images to load properly
             try:
-                WebDriverWait(driver, timeout=self.__timeout).until(page_ready())
+                WebDriverWait(self.driver, timeout=self.__timeout).until(page_ready())
             except Exception as e:
                 pass
-                # driver.close()
                 # raise Exception("Timeout waiting for page to load")  
-        self.page = driver.find_element(By.CSS_SELECTOR, "body").get_attribute('innerHTML')
-        driver.close()
+        self.page = self.driver.find_element(By.CSS_SELECTOR, "body").get_attribute('innerHTML')
 
     def build_response(self):  
         self.send_request()      
