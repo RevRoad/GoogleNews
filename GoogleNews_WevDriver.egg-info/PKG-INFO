@@ -1,4 +1,19 @@
-# GoogleNews_WebDriver
+Metadata-Version: 2.1
+Name: GoogleNews-WevDriver
+Version: 1.0.0
+Summary: Google News search for Python
+Home-page: https://github.com/RevRoad/GoogleNews
+Author: Jacob Tye
+Author-email: jacob.tye@revroad.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# GoogleNews-Chrome
 This is a fork of GoogleNews[https://github.com/Iceloof/GoogleNews] with Headless Chrome support to get all pictures.
 <!-- [![Build Status](https://app.travis-ci.com/Iceloof/GoogleNews.svg)](https://app.travis-ci.com/github/Iceloof/GoogleNews)
 [![Coverage Status](https://coveralls.io/repos/github/Iceloof/GoogleNews/badge.svg)](https://coveralls.io/github/Iceloof/GoogleNews)
@@ -13,16 +28,16 @@ This is a fork of GoogleNews[https://github.com/Iceloof/GoogleNews] with Headles
 
 ## Install
 ```
-pip install GoogleNews_WebDriver
+pip install GoogleNews-Chrome
 ```
 or
 ```
-pip install --upgrade GoogleNews_WebDriver
+pip install --upgrade GoogleNews-Chrome
 ```
 ## Usage
 - Initializing
 ```
-from GoogleNews_WebDriver import GoogleNews
+from GoogleNews-Chrome import GoogleNews
 googlenews = GoogleNews()
 ```
 - Check version
@@ -107,3 +122,5 @@ googlenews.clear()
 The date range is not always working as Google may return the result with random order or out of date range.
 
 Google may recognize the program as automated robots and block the IP, using cloud server and fetching data with high frequency will get higher chance to be blocked. 
+
+

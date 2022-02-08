@@ -2,7 +2,7 @@
 ### MODULES
 
 import unittest
-from GoogleNews import GoogleNews
+from GoogleNews_WebDriver import GoogleNews
 
 ### TEST
 

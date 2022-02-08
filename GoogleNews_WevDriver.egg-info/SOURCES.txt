@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+GoogleNews_WevDriver/__init__.py
+GoogleNews_WevDriver.egg-info/PKG-INFO
+GoogleNews_WevDriver.egg-info/SOURCES.txt
+GoogleNews_WevDriver.egg-info/dependency_links.txt
+GoogleNews_WevDriver.egg-info/requires.txt
+GoogleNews_WevDriver.egg-info/top_level.txt
+test/__init__.py
+test/test_search.py
+test/test_sort.py
