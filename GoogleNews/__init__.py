@@ -21,16 +21,13 @@ from dateutil.relativedelta import relativedelta
 class page_ready(object):
 
   def __call__(self, driver : WebDriver):
-    element = driver.find_element(By.ID, "result-stats")
-    #Make sure id -> result-stats is present and no g-img have loading gif -> data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-    if element:
-        images = driver.find_elements(By.CSS_SELECTOR, "g-img")
-        for image in images:
-            img = image.find_element(By.CSS_SELECTOR, "img")
-            if img.get_attribute('src') == 'data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==':
-                return False
-        return element
-    return False
+
+    images = driver.find_elements(By.CSS_SELECTOR, "g-img")
+    for image in images:
+        img = image.find_element(By.CSS_SELECTOR, "img")
+        if img.get_attribute('src') == 'data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==':
+            return False
+    return driver.find_elements(By.CSS_SELECTOR, "body")
 
 def lexical_date_parser(date_to_check):
     if date_to_check=='':
