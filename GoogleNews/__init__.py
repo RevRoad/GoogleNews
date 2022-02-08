@@ -38,8 +38,7 @@ def lexical_date_parser(date_to_check):
     datetime_tmp=None
     date_tmp=copy.copy(date_to_check)
     try:
-        date_tmp = date_tmp[date_tmp.rfind('..')+2:]
-        datetime_tmp=dateparser.parse(date_tmp)
+        datetime_tmp=parse(date_tmp)
     except:
         date_tmp = None
         datetime_tmp = None
